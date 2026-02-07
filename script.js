@@ -2,7 +2,12 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        // Skip if href is just '#' or invalid
+        if (!href || href === '#' || href.length <= 1) {
+            return;
+        }
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
@@ -86,7 +91,7 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Observe all animated elements with staggered delays
-    document.querySelectorAll('.expertise-card, .timeline-card, .cert-card').forEach((card, index) => {
+    document.querySelectorAll('.expertise-card, .timeline-card, .cert-card, .blog-card').forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
         observer.observe(card);
     });
@@ -121,5 +126,106 @@ window.addEventListener('load', function() {
             heroContent.style.opacity = '1';
             heroContent.style.transform = 'translateY(0)';
         }, 100);
+    }
+    
+    // Load tech blogs on page load
+    loadBlogsIntoSection();
+});
+
+// Sanitize HTML to prevent XSS
+function sanitizeHTML(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+// Medium Blogs Modal Functionality
+function renderTechBlogs(posts, containerId = "tech-blogs") {
+    const container = document.getElementById(containerId);
+    
+    if (!container) {
+        return;
+    }
+    
+    container.innerHTML = "";
+    
+    if (posts.length === 0) {
+        container.innerHTML = "<p class='no-blogs'>No software engineering articles found with the tech tag yet.</p>";
+        return;
+    }
+    
+    posts
+        .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+        .forEach((post, index) => {
+            const card = document.createElement("div");
+            card.className = "blog-card";
+            card.style.animationDelay = `${index * 0.1}s`;
+            
+            const title = document.createElement('h3');
+            title.textContent = post.title;
+            
+            const date = document.createElement('p');
+            date.className = 'blog-date';
+            date.textContent = new Date(post.pubDate).toDateString();
+            
+            const link = document.createElement('a');
+            link.href = sanitizeHTML(post.link);
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.className = 'blog-link';
+            link.textContent = 'Read on Medium →';
+            
+            card.appendChild(title);
+            card.appendChild(date);
+            card.appendChild(link);
+            container.appendChild(card);
+        });
+}
+
+// Load blogs into the main page section
+async function loadBlogsIntoSection() {
+    const container = document.getElementById("blogs-grid");
+    if (!container) return;
+    
+    try {
+        const posts = await fetchSoftwareEngineeringBlogs();
+        renderTechBlogs(posts, "blogs-grid");
+    } catch (error) {
+        container.innerHTML = "<p class='no-blogs'>Unable to load articles at this time.</p>";
+    }
+}
+
+// Modal Controls
+const modal = document.getElementById("blogs-modal");
+const mediumLink = document.getElementById("medium-link");
+const closeBtn = document.querySelector(".modal-close");
+
+if (mediumLink && modal) {
+    mediumLink.addEventListener("click", async function(e) {
+        e.preventDefault();
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
+        
+        const container = document.getElementById("tech-blogs");
+        if (container) {
+            container.innerHTML = "<p class='loading'>Loading articles...</p>";
+            const posts = await fetchSoftwareEngineeringBlogs();
+            renderTechBlogs(posts, "tech-blogs");
+        }
+    });
+}
+
+if (closeBtn) {
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    });
+}
+
+// Close modal when clicking outside
+window.addEventListener("click", function(e) {
+    if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
     }
 });
