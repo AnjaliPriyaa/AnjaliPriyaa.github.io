@@ -216,11 +216,12 @@ body {
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 620px;
     position: relative;
     z-index: 2;
     margin-left: 0;
     padding-left: 0;
+    padding-right: 40px;
 }
 
 .greeting {
@@ -232,10 +233,13 @@ body {
 }
 
 .hero-title {
-    font-size: 85px;
-    line-height: 1.05;
+    font-size: 68px;
+    line-height: 1.15;
     margin: 20px 0;
     font-weight: 700;
+}
+
+.hero-title .nowrap {
     white-space: nowrap;
 }
 
@@ -245,9 +249,10 @@ body {
 
 .hero-subtitle {
     color: var(--text-secondary);
-    font-size: 26px;
+    font-size: 24px;
     margin: 20px 0 35px;
     line-height: 1.4;
+    max-width: 500px;
 }
 
 .btn-primary {
@@ -294,11 +299,11 @@ body {
 /* Hero Image Area */
 .hero-image {
     position: absolute;
-    right: 10%;
+    right: 3%;
     top: 50%;
     transform: translateY(-50%);
-    width: 600px;
-    height: 600px;
+    width: 520px;
+    height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -318,8 +323,8 @@ body {
 
 .profile-pic {
     position: relative;
-    width: 340px;
-    height: 340px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(0, 245, 255, 0.3);
@@ -356,8 +361,8 @@ body {
 
 .floating-icon {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     opacity: 0.75;
     transition: all 0.3s ease;
     filter: drop-shadow(0 4px 8px rgba(0, 245, 255, 0.2)) brightness(1.1) saturate(1.2);
@@ -1002,12 +1007,15 @@ body {
     }
 
     .hero-title {
-        font-size: 55px;
-        white-space: normal;
+        font-size: 52px;
+    }
+    
+    .hero-content {
+        max-width: 500px;
     }
     
     .hero-subtitle {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .btn-primary {
@@ -1089,11 +1097,16 @@ body {
     
     .hero-content {
         max-width: 100%;
+        padding-right: 0;
     }
 
     .hero-title {
         font-size: 48px;
         line-height: 1.15;
+    }
+    
+    .hero-title .nowrap {
+        white-space: normal;
     }
     
     .hero-subtitle {
@@ -1241,6 +1254,10 @@ body {
     
     .hero-title {
         font-size: 40px;
+    }
+    
+    .hero-title .nowrap {
+        white-space: normal;
     }
     
     .hero-subtitle {
