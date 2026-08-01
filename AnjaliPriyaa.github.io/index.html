@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Anjali Priya - Software Engineer specializing in Cloud & Infrastructure Automation, DevOps, and Platform Engineering">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://api.rss2json.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <title>Anjali Priya — Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Top Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Anjali</a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#blogs" class="nav-link">Blogs</a>
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section hero">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <p class="hero-greeting">Hi, I'm</p>
+                    <h1 class="hero-name">Anjali <span class="gradient-text">Priya</span></h1>
+                    <p class="hero-role"><span id="typewriter"></span><span class="typewriter-cursor">|</span></p>
+                    <p class="hero-desc">I build scalable infrastructure, automate deployments, and craft developer platforms that make engineering teams faster and more secure.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">Get in touch</a>
+                        <a href="#work" class="btn-secondary">View my work</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-orbital">
+                        <!-- Orbiting rings -->
+                        <div class="orbit-ring orbit-ring-1">
+                            <div class="orbit-icon oi-1"><img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="K8s"></div>
+                            <div class="orbit-icon oi-2"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker"></div>
+                            <div class="orbit-icon oi-3"><img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform"></div>
+                            <div class="orbit-icon oi-4"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python"></div>
+                        </div>
+                        <div class="orbit-ring orbit-ring-2">
+                            <div class="orbit-icon oi-5"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></div>
+                            <div class="orbit-icon oi-6"><img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins"></div>
+                            <div class="orbit-icon oi-7"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="Go"></div>
+                            <div class="orbit-icon oi-8"><img src="https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg" alt="Ansible"></div>
+                        </div>
+                        <!-- Center avatar -->
+                        <div class="hero-image-wrapper">
+                            <img src="anime-profile.png" alt="Anjali Priya" class="hero-pic">
+                            <div class="hero-glow"></div>
+                            <div class="hero-status">
+                                <span class="hero-status-dot"></span>
+                                Available for opportunities
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title"><span class="gradient-underline">About Me</span></h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Bengaluru, Karnataka, India</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">💼</div>
+                        <h3>Current Role</h3>
+                        <p>Software Engineer at IBM India Software Labs</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">🎯</div>
+                        <h3>Focus</h3>
+                        <p>Platform Engineering, DevOps, Cloud & Infrastructure Automation</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">⚡</div>
+                        <h3>Passion</h3>
+                        <p>Building tools that make developers' lives easier</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="section stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="80">0</span>
+                        <span class="stat-suffix">%</span>
+                        <p class="stat-label">Faster Deployments</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <p class="stat-label">Cloud Platforms</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Tools & Technologies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title"><span class="gradient-underline">Expertise</span></h2>
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="6" width="20" height="4" rx="1"/>
+                                <rect x="2" y="14" width="20" height="4" rx="1"/>
+                            </svg>
+                        </div>
+                        <h3>Platform Engineering</h3>
+                        <p>Deployed Terraform Enterprise, created NIST/CIS compliant VM and container images, enforced policy for SDDC migration, and automated multi-cloud workflows — improving deployment efficiency by 80%.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-tooltip="Terraform"><img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform"></span>
+                            <span class="tech-tag" data-tooltip="Packer"><img src="https://www.vectorlogo.zone/logos/packer/packer-icon.svg" alt="Packer"></span>
+                            <span class="tech-tag" data-tooltip="Ansible"><img src="https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg" alt="Ansible"></span>
+                            <span class="tech-tag" data-tooltip="Docker"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker"></span>
+                            <span class="tech-tag" data-tooltip="Kubernetes"><img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes"></span>
+                            <span class="tech-tag" data-tooltip="Oracle Cloud"><img src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" alt="OCI"></span>
+                            <span class="tech-tag" data-tooltip="Azure"><img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="Azure"></span>
+                            <span class="tech-tag" data-tooltip="AWS"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></span>
+                            <span class="tech-tag" data-tooltip="Golang"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="Golang"></span>
+                        </div>
+                    </div>
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>DevOps & CI/CD</h3>
+                        <p>Built DevOps pipelines from scratch, enforced security through static analysis and vulnerability scanning, and integrated DevSecOps practices across the software delivery lifecycle.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-tooltip="Jenkins"><img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins"></span>
+                            <span class="tech-tag" data-tooltip="GitHub Actions"><img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Actions"></span>
+                            <span class="tech-tag" data-tooltip="Harness"><img src="https://www.vectorlogo.zone/logos/harness/harness-icon.svg" alt="Harness"></span>
+                            <span class="tech-tag" data-tooltip="Tekton"><img src="https://www.vectorlogo.zone/logos/tektoncd/tektoncd-icon.svg" alt="Tekton"></span>
+                            <span class="tech-tag" data-tooltip="OpenShift"><img src="https://www.vectorlogo.zone/logos/openshift/openshift-icon.svg" alt="OpenShift"></span>
+                            <span class="tech-tag" data-tooltip="Blackduck"><img src="https://www.vectorlogo.zone/logos/synopsys/synopsys-icon.svg" alt="Blackduck"></span>
+                            <span class="tech-tag" data-tooltip="Aqua Security"><img src="https://www.vectorlogo.zone/logos/aquasec/aquasec-icon.svg" alt="Aqua"></span>
+                            <span class="tech-tag" data-tooltip="Veracode">Veracode</span>
+                            <span class="tech-tag" data-tooltip="Dynatrace"><img src="https://www.vectorlogo.zone/logos/dynatrace/dynatrace-icon.svg" alt="Dynatrace"></span>
+                            <span class="tech-tag" data-tooltip="Splunk"><img src="https://www.vectorlogo.zone/logos/splunk/splunk-icon.svg" alt="Splunk"></span>
+                        </div>
+                    </div>
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                        </div>
+                        <h3>Programming & Automation</h3>
+                        <p>Built agentic GitHub search agents, automated infrastructure checks, and developed management utilities across multiple languages — turning manual workflows into reliable, repeatable systems.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag" data-tooltip="Python"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python"></span>
+                            <span class="tech-tag" data-tooltip="Golang"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="Golang"></span>
+                            <span class="tech-tag" data-tooltip="Bash"><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="Bash"></span>
+                            <span class="tech-tag" data-tooltip="YAML"><img src="https://www.vectorlogo.zone/logos/yaml/yaml-icon.svg" alt="YAML"></span>
+                            <span class="tech-tag" data-tooltip="MySQL"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL"></span>
+                            <span class="tech-tag" data-tooltip="JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blogs Section -->
+        <section id="blogs" class="section">
+            <div class="container">
+                <h2 class="section-title"><span class="gradient-underline">Latest Blogs</span></h2>
+                <p class="section-subtitle">Thoughts on software engineering, infrastructure, and automation — published on Medium</p>
+                <div id="blogs-grid" class="blogs-grid">
+                    <div class="blog-skeleton"><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-line xshort"></div></div>
+                    <div class="blog-skeleton"><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-line xshort"></div></div>
+                    <div class="blog-skeleton"><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-line xshort"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title"><span class="gradient-underline">Career History</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-body">
+                            <div class="timeline-card">
+                                <span class="timeline-badge current">Current</span>
+                                <h3>IBM India Software Labs</h3>
+                                <p class="timeline-role">Software Engineer / Z-OS Platform</p>
+                                <p class="timeline-meta">Bengaluru, Karnataka • May 2025 — Present</p>
+                                <p class="timeline-desc">Streamlined infrastructure and deployment workflows using Terraform, Golang, and OpenShift automation, reducing manual effort and improving deployment efficiency by up to 80%. Improved infrastructure reliability through contributions to Terraform Plugin Framework. Optimized CI/CD pipelines on OpenShift, Tekton, and Kubernetes. Built an agentic GitHub search system to track issues across IBM, reducing duplicate work and improving cross-team visibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-line"></div>
+                        </div>
+                        <div class="timeline-body">
+                            <div class="timeline-card">
+                                <h3>State Street Corporation</h3>
+                                <p class="timeline-role">Senior Associate | Platform Engineer</p>
+                                <p class="timeline-meta">Bengaluru, Karnataka • Jan 2022 — Jul 2025</p>
+                                <p class="timeline-desc">Built CIS and NIST-compliant Linux OS images for secure enterprise deployments. Implemented end-to-end DevSecOps with Aqua Security, Veracode static analysis, and HashiCorp Vault for secrets management. Led infrastructure provisioning for SDDC migrations to AWS and Azure using Terraform, automating Terraform Enterprise setup with Ansible and enforcing governance via Sentinel policies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="timeline-body">
+                            <div class="timeline-card">
+                                <h3>HighRadius</h3>
+                                <p class="timeline-role">Software Engineer Intern</p>
+                                <p class="timeline-meta">Bhubaneswar, Odisha • Jan 2021 — Dec 2021</p>
+                                <p class="timeline-desc">Applied full-stack solutions as part of the Autonomous and NLP team to deliver B2B solutions using Java and React.js. Built an AI-enabled FinTech B2B Sales Invoice Management Application with an ML model predicting account receivable clearing delays, paired with a ReactJS dashboard.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2 class="section-title"><span class="gradient-underline">Certifications</span></h2>
+                <div class="certifications-grid">
+                    <div class="cert-card">
+                        <div class="cert-badge">☁️</div>
+                        <h3>Oracle Cloud Infrastructure 2024 Foundation Associate</h3>
+                        <p class="cert-issuer">Oracle</p>
+                        <p class="cert-meta">Issued Jan 2025 • Expires Jan 2027</p>
+                        <span class="cert-id">120-1085-24</span>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">☁️</div>
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <p class="cert-meta">Issued Feb 2025 • Expires Feb 2028</p>
+                        <span class="cert-id">CLF-C02</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-alt">
+            <div class="container container-narrow">
+                <h2 class="section-title"><span class="gradient-underline">Get In Touch</span></h2>
+                <p class="contact-text">I'm always open to discussing new projects, creative ideas, or opportunities. Drop me a message!</p>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or idea..." required maxlength="1000"></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2026 Anjali Priya. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.linkedin.com/in/anjalipriya24/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://medium.com/@anjalipriya_" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                </a>
+                <a href="https://github.com/AnjaliPriyaa" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="fetch.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
