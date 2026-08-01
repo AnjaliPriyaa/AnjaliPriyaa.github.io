@@ -204,12 +204,12 @@
             const rotateX = ((y - centerY) / centerY) * -8;
             const rotateY = ((x - centerX) / centerX) * 8;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.04)`;
             card.style.transition = 'transform 0.1s ease-out';
         });
 
         card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
             card.style.transition = 'transform 0.5s ease-out';
         });
     });
@@ -456,11 +456,11 @@ function renderBlogCards(posts, container) {
                 const y = e.clientY - rect.top;
                 const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -5;
                 const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 5;
-                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.04)`;
                 card.style.transition = 'transform 0.1s ease-out';
             });
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+                card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
                 card.style.transition = 'transform 0.5s ease-out';
             });
         });

@@ -771,16 +771,37 @@ img {
     transform-style: preserve-3d;
 }
 
-/* Glow border animation on hover */
-@keyframes borderGlow {
-    0%, 100% { border-color: var(--border-accent); }
-    50% { border-color: rgba(192, 132, 252, 0.4); }
+/* Glow border pulse on hover — using pseudo-element to avoid overriding scroll animations */
+.expertise-card,
+.cert-card,
+.timeline-card {
+    position: relative;
 }
 
-.expertise-card:hover,
-.cert-card:hover,
-.timeline-card:hover {
-    animation: borderGlow 2s ease-in-out infinite;
+.expertise-card::after,
+.cert-card::after,
+.timeline-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 30px rgba(129, 140, 248, 0.3);
+    z-index: -1;
+}
+
+.expertise-card:hover::after,
+.cert-card:hover::after,
+.timeline-card:hover::after {
+    opacity: 1;
+    animation: cardGlowPulse 2s ease-in-out infinite;
+}
+
+@keyframes cardGlowPulse {
+    0%, 100% { box-shadow: 0 0 25px rgba(129, 140, 248, 0.25); }
+    50% { box-shadow: 0 0 45px rgba(167, 139, 250, 0.45); }
 }
 
 /* ========================================
@@ -804,7 +825,7 @@ img {
 
 .about-card:hover {
     border-color: var(--border-accent);
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.04);
     box-shadow: var(--shadow-glow);
 }
 
@@ -1416,6 +1437,8 @@ img {
 
 .animate-in {
     animation: fadeInUp 0.7s var(--ease-out) forwards;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes fadeInUp {
