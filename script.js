@@ -148,7 +148,7 @@
     if (!el) return;
 
     const phrases = [
-        'Software Engineer',
+        'Software Engineer 2',
         'Platform Engineer',
         'DevSecOps Engineer',
         'Cloud & Infrastructure Automation',
